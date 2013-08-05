@@ -34,6 +34,7 @@ unless have_header('qrencode.h') && have_library('qrencode', 'QRinput_new')
     cwd dir
     code <<-END
       tar xzf #{archive} && cd #{basename} && ./configure && make && make install
+      ldconfig /usr/local/lib
     END
   end
 end
